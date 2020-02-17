@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="cryptoCurrencyData"
+            type="com.ramesh.cryptocurrency.model.CryptoCurrencyData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/currency_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{cryptoCurrencyData.cryptoCurrencyName}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{cryptoCurrencyData.price}"
+            app:layout_constraintEnd_toEndOf="@+id/currency_name"
+            app:layout_constraintStart_toStartOf="@+id/currency_name"
+            app:layout_constraintTop_toBottomOf="@+id/currency_name" />
+
+        <TextView
+            android:id="@+id/market_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{cryptoCurrencyData.marketCap}"
+            app:layout_constraintEnd_toEndOf="@+id/price"
+            app:layout_constraintStart_toStartOf="@+id/price"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
